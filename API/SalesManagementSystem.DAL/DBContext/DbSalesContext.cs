@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace SalesManagementSystem.Model;
+namespace SalesManagementSystem.DAL.DBContext;
 
 public partial class DbSalesContext : DbContext
 {
