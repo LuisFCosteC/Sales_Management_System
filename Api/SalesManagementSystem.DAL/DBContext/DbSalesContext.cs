@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using SalesManagementSystem.Model
+using SalesManagementSystem.Model;
 
 namespace SalesManagementSystem.DAL.DBContext;
 
