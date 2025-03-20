@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using SalesManagementSystem.Model
 
-namespace SalesManagementSystem.Model;
+namespace SalesManagementSystem.DAL.DBContext;
 
 public partial class DbSalesContext : DbContext
 {
@@ -15,21 +16,21 @@ public partial class DbSalesContext : DbContext
     {
     }
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public virtual DbSet<Category> Category { get; set; }
 
     public virtual DbSet<DetailSales> DetailSales { get; set; }
 
-    public virtual DbSet<Menu> Menus { get; set; }
+    public virtual DbSet<Menu> Menu { get; set; }
 
-    public virtual DbSet<MenuRole> MenuRoles { get; set; }
+    public virtual DbSet<MenuRole> MenuRole { get; set; }
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Product> Product { get; set; }
 
-    public virtual DbSet<Role> Roles { get; set; }
+    public virtual DbSet<Role> Role { get; set; }
 
     public virtual DbSet<Sales> Sales { get; set; }
 
-    public virtual DbSet<SalesNumber> SalesNumbers { get; set; }
+    public virtual DbSet<SalesNumber> SalesNumber { get; set; }
 
     public virtual DbSet<Users> Users { get; set; }
 
