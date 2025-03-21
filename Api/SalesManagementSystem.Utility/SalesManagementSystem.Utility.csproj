@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SalesManagementSystem.DTO\SalesManagementSystem.DTO.csproj" />
     <ProjectReference Include="..\SalesManagementSystem.Model\SalesManagementSystem.Model.csproj" />
   </ItemGroup>
