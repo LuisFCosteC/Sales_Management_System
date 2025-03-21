@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SalesManagementSystem.DAL.Repositories.Contract;
 using SalesManagementSystem.DAL.DBContext;
 using SalesManagementSystem.Model;
-0
+
 namespace SalesManagementSystem.DAL.Repositories
 {
     public class SaleRepository : GenericRepository<Sales>, ISaleRepository
