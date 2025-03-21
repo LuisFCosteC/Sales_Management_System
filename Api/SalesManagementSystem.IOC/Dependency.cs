@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SalesManagementSystem.DAL.DBContext;
+using SalesManagementSystem.DAL.Repositories;
+using SalesManagementSystem.DAL.Repositories.Contract;
 
 namespace SalesManagementSystem.IOC
 {
@@ -18,6 +20,11 @@ namespace SalesManagementSystem.IOC
             {
                 options.UseSqlServer(configuration.GetConnectionString("stringSQL"));
             });
+
+            // Dependency of Repositories
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ISaleRepository, SaleRepository>();
         }
     }
 }
