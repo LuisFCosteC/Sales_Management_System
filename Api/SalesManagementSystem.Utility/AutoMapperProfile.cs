@@ -95,7 +95,7 @@ namespace SalesManagementSystem.Utility
                 )
                 .ForMember(destination =>
                     destination.IsActive,
-                    opt => opt.MapFrom(origin => origin.IsActive == 1 ? true : flase)
+                    opt => opt.MapFrom(origin => origin.IsActive == 1 ? true : false)
                 );
             #endregion Product
 
@@ -149,9 +149,9 @@ namespace SalesManagementSystem.Utility
                 );
             #endregion DetailSales
 
-            // ----------------------------------------------------------------------------
-            // ------------------------------ Report Mapping ------------------------------
-            // ----------------------------------------------------------------------------
+        // ----------------------------------------------------------------------------
+        // ------------------------------ Report Mapping ------------------------------
+        // ----------------------------------------------------------------------------
             #region Report
             CreateMap<DetailSales, ReportDTO>()
                 .ForMember(destination =>
