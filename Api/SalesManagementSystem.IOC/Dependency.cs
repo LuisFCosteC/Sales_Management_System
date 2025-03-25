@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SalesManagementSystem.DAL.DBContext;
 using SalesManagementSystem.DAL.Repositories;
 using SalesManagementSystem.DAL.Repositories.Contract;
+using SalesManagementSystem.Utility;
 
 namespace SalesManagementSystem.IOC
 {
@@ -25,6 +26,11 @@ namespace SalesManagementSystem.IOC
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ISaleRepository, SaleRepository>();
+
+            // Dependency of AutoMapper 
+
+            services.AddAutoMapper(typeof(AutoMapperProfile));
+
         }
     }
 }
