@@ -74,7 +74,7 @@ namespace SalesManagementSystem.BLL.Services
             Dictionary<string, int> result = new Dictionary<string, int>();
             IQueryable<Sales> _salesQuery = await _saleRepository.Consult();
 
-            if(_salesQuery.Count() > )
+            if(_salesQuery.Count() > 0)
             {
                 var tableSales = returnSales(_salesQuery, -7);
                 result = tableSales

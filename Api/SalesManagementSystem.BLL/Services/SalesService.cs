@@ -14,7 +14,7 @@ using SalesManagementSystem.Model;
 
 namespace SalesManagementSystem.BLL.Services
 {
-    public class SalesService 
+    public class SalesService : ISalesService
     {
         private readonly ISaleRepository _saleRepository;
         private readonly IGenericRepository<DetailSales> _datailsalesRespository;
