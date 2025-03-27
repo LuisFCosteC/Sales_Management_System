@@ -8,8 +8,8 @@ using SalesManagementSystem.DTO;
 
 namespace SalesManagementSystem.BLL.Services.Contract
 {
-    public interface IRoleService
+    public interface IMenuService
     {
-        Task<List<RoleDTO>> List();
+        Task<List<MenuDTO>> List(int idUsers);
     }
 }
