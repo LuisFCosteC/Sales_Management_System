@@ -8,8 +8,11 @@ using SalesManagementSystem.DTO;
 
 namespace SalesManagementSystem.BLL.Services.Contract
 {
-    public interface IRoleService
+    public interface IProductService
     {
-        Task<List<RoleDTO>> List();
+        Task<List<ProductDTO>> List();
+        Task<ProductDTO> Create(ProductDTO model);
+        Task<bool> Edit(ProductDTO model);
+        Task<bool> Delete(int id);
     }
 }

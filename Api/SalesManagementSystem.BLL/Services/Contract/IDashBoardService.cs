@@ -8,8 +8,8 @@ using SalesManagementSystem.DTO;
 
 namespace SalesManagementSystem.BLL.Services.Contract
 {
-    public interface IRoleService
+    public interface IDashBoardService
     {
-        Task<List<RoleDTO>> List();
+        Task<DashBoardDTO> Summary();
     }
 }

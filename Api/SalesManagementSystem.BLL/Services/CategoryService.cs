@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using SalesManagementSystem.BLL.Services.Contract;
 using SalesManagementSystem.DAL.Repositories.Contract;
 using SalesManagementSystem.DTO;
