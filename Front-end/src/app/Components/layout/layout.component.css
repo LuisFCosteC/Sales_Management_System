@@ -1,0 +1,26 @@
+.toolbar {
+    background-color: #1565c0; 
+    color: white;
+}
+
+.icon {
+    color: white;
+}
+
+.sidenav {
+    background-color: #f5f5f5;
+    width: 200px;
+}
+
+.list-item {
+    height: 500px;
+}
+
+.div-list-item {
+    display: flex; 
+    align-items: center;
+}
+
+.span-div-list-item {
+    margin-left: 20px;
+}

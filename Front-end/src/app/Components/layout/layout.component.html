@@ -1,5 +1,72 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <h1>Sales Management System</h1>
+<!-- Barra de herramientas superior -->
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>                                   <!-- Fila de la barra de herramientas -->
+        <h1>Sistema de Ventas</h1>                      <!-- Título de la barra de herramientas -->
+        <button mat-button (click)="sidenav.toggle()">  <!-- Botón para abrir/cerrar el menú lateral -->
+            <mat-icon class="icon">menu</mat-icon>      <!-- Icono del menú -->
+        </button>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<!-- Contenedor del menú lateral y el contenido principal -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">            <!-- Menú lateral -->
+        <mat-nav-list>                                                          <!-- Lista de elementos del menú -->
+            
+            <!-- Elemento del menú para el dashboard -->
+            <mat-list-item routerLink="/pages/dashboard" class="list-item">    
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>dashboard</mat-icon>                <!-- Icono del dashboard -->
+                    <span class="span-div-list-item">Dashboard</span>           <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+            
+            <!-- Elemento del menú para los usuarios -->
+            <mat-list-item routerLink="/pages/users" class="list-item">
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>group</mat-icon>                    <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">Usuarios</span>            <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+
+            <!-- Elemento del menú para los productos -->
+            <mat-list-item routerLink="/pages/product" class="list-item">
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>collections_bookmark</mat-icon>     <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">Productos</span>           <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+
+            <!-- Elemento del menú para las ventas -->
+            <mat-list-item routerLink="/pages/sales" class="list-item">
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>currency_exchange</mat-icon>        <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">Ventas</span>              <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+
+            <!-- Elemento del menú para el historial de ventas -->
+            <mat-list-item routerLink="/pages/sales-history" class="list-item">
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>edit_note</mat-icon>                <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">Historial Ventas</span>    <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+
+            <!-- Elemento del menú para los reportes -->
+            <mat-list-item routerLink="/pages/report" class="list-item">
+                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                    <mat-icon mat-list-icon>receipt</mat-icon>                  <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">Reporte</span>             <!-- Texto del elemento del menú -->
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Contenido principal -->
+    <mat-sidenav-content>
+        <div style="height: 90vh;">             <!-- Contenedor del contenido principal -->
+            <router-outlet></router-outlet>     <!-- Outlet para el contenido principal -->
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
