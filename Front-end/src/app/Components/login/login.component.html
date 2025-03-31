@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="body">                  <!-- Contenedor principal que envuelve todo el contenido de la página -->
+    <mat-card class="loginCard">    <!-- Tarjeta de Material Design que actúa como contenedor para el formulario de inicio de sesión -->
+        <div class="header">        <!-- Sección superior de la tarjeta que contiene el encabezado del formulario -->
+            <h2>Login</h2>          <!-- Título del formulario que indica que es para iniciar sesión -->
+        </div>
+        <mat-card-content class="loginCardContent">                        <!-- Contenido de la tarjeta que alberga el formulario de inicio de sesión -->
+            <form [formGroup]="loginForm" (ngSubmit)="login()">               <!-- Formulario que utiliza Reactive Forms de Angular, se envía al ejecutar la función 'login' -->
+                <mat-form-field class="full-width" appearance="outline">         <!-- Campo de formulario que utiliza el estilo de contorno y ocupa todo el ancho disponible -->
+                    <mat-label>Email</mat-label>                                    <!-- Etiqueta que indica el campo para ingresar el email -->
+                    <input formControlName="email" matInput autocomplete="off">     <!-- Campo de entrada para el email, vinculado al control 'email' del formulario, con autocompletado desactivado -->
+                    <mat-icon matSuffix class="iconMat">mail</mat-icon>                             <!-- Icono que se muestra al final del campo de entrada, representando un correo electrónico -->
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="outline">    <!-- Campo de formulario para la entrada de la contraseña, también con estilo de contorno -->
+                    <mat-label>Password</mat-label>                             <!-- Etiqueta que indica el campo para ingresar la contraseña -->
+                    <input [type]="hidePassword ? 'password':'text'" formControlName="password" matInput autocomplete="off">  <!-- Campo de entrada para la contraseña, el tipo cambia según el estado de 'hidePassword' para ocultar o mostrar el texto -->
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">  <!-- Botón que permite alternar la visibilidad de la contraseña al hacer clic -->
+                        <mat-icon matSuffix class="iconMat">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>       <!-- Icono que cambia según el estado de 'hidePassword', indicando si la contraseña está oculta o visible -->
+                    </button>
+                </mat-form-field>
+
+                <button class="full-width" mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">  <!-- Botón para enviar el formulario, deshabilitado si el formulario es inválido -->
+                    Ingresar  <!-- Texto del botón que indica la acción de inicio de sesión -->
+                    <mat-icon matSuffix>login</mat-icon>  <!-- Icono que se muestra al final del botón, representando la acción de inicio de sesión -->
+                </button>
+            </form>  <!-- Fin del formulario -->
+        </mat-card-content>
+        <mat-card-footer>   <!-- Sección inferior de la tarjeta que puede contener información adicional o indicadores de carga -->
+            <mat-progress-bar mode="indeterminate" *ngIf="showLoading" class="custom-progress-bar"></mat-progress-bar>  <!-- Barra de progreso que se muestra cuando 'showLoading' es verdadero, indicando que se está procesando la solicitud de inicio de sesión -->
+        </mat-card-footer>
+    </mat-card>
+</div>
