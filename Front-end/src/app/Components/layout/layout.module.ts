@@ -10,6 +10,7 @@ import { SalesHistoryComponent } from './Pages/sales-history/sales-history.compo
 import { ReportComponent } from './Pages/report/report.component';
 import { SharedModule } from '../../Reusable/shared/shared.module';
 import { ModalUsersComponent } from './Modals/modal-users/modal-users.component';
+import { ModalProductComponent } from './Modals/modal-product/modal-product.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ModalUsersComponent } from './Modals/modal-users/modal-users.component'
     SalesComponent,
     SalesHistoryComponent,
     ReportComponent,
-    ModalUsersComponent
+    ModalUsersComponent,
+    ModalProductComponent
   ],
   imports: [
     CommonModule,
