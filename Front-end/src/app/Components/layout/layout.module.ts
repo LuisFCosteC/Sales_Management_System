@@ -9,6 +9,7 @@ import { SalesComponent } from './Pages/sales/sales.component';
 import { SalesHistoryComponent } from './Pages/sales-history/sales-history.component';
 import { ReportComponent } from './Pages/report/report.component';
 import { SharedModule } from '../../Reusable/shared/shared.module';
+import { ModalUsersComponent } from './Modals/modal-users/modal-users.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SharedModule } from '../../Reusable/shared/shared.module';
     ProductComponent,
     SalesComponent,
     SalesHistoryComponent,
-    ReportComponent
+    ReportComponent,
+    ModalUsersComponent
   ],
   imports: [
     CommonModule,

@@ -5,8 +5,8 @@ USE DB_Sales;
 
 INSERT INTO Role(name) 
 VALUES 
-    ('Administrator'),
-    ('Employee'),
+    ('Administrador'),
+    ('Empleado'),
     ('Supervisor');
 
 SELECT * FROM Role;
@@ -16,7 +16,7 @@ SELECT * FROM Role;
 
 INSERT INTO Users(fullName, email, idRole, password) 
 VALUES
-    ('student code', 'code@example.com', 1, '123');
+    ('código de estudiante', 'code@example.com', 1, '123');
 
 SELECT * FROM Users;
 
@@ -25,12 +25,12 @@ SELECT * FROM Users;
 
 INSERT INTO Category(name, isActive)
 VALUES
-    ('Laptops', 1),
-    ('Monitors', 1),
-    ('Keyboards', 1),
-    ('Headphones', 1),
-    ('Memory', 1),
-    ('Accessories', 1);
+    ('Portátiles', 1),
+    ('Monitores', 1),
+    ('Teclados', 1),
+    ('Auriculares', 1),
+    ('Memoria', 1),
+    ('Accesorios', 1);
 
 SELECT * FROM Category;
 
@@ -39,21 +39,21 @@ SELECT * FROM Category;
 
 INSERT INTO Product(name, idCategory, stock, price, isActive)
 VALUES
-    ('Samsung Book Pro Laptop', 1, 20, 2500, 1),
-    ('Lenovo IdeaPad Laptop', 1, 30, 2200, 1),
-    ('Asus ZenBook Duo Laptop', 1, 30, 2100, 1),
-    ('Teros Gaming Monitor', 2, 25, 1050, 1),
-    ('Samsung Curved Monitor', 2, 15, 1400, 1),
-    ('Huawei Gamer Monitor', 2, 10, 1350, 1),
-    ('Seisen Gamer Keyboard', 3, 10, 800, 1),
-    ('Antryx Gamer Keyboard', 3, 10, 1000, 1),
-    ('Logitech Keyboard', 3, 10, 1000, 1),
-    ('Logitech Gamer Headset', 4, 15, 800, 1),
-    ('HyperX Gamer Headset', 4, 20, 680, 1),
-    ('Redragon RGB Headset', 4, 35, 950, 1),
-    ('Kingston RGB Memory', 5, 10, 200, 1),
-    ('Cooler Master Fan', 6, 20, 200, 1),
-    ('Lenovo Mini Fan', 6, 15, 200, 1);
+    ('Laptop Samsung Book Pro', 1, 20, 2500, 1),
+    ('Laptop Lenovo IdeaPad', 1, 30, 2200, 1),
+    ('Laptop Asus ZenBook Duo', 1, 30, 2100, 1),
+    ('Monitor Gaming Teros', 2, 25, 1050, 1),
+    ('Monitor Curvo Samsung', 2, 15, 1400, 1),
+    ('Monitor Gamer Huawei', 2, 10, 1350, 1),
+    ('Teclado Gamer Seisen', 3, 10, 800, 1),
+    ('Teclado Gamer Antryx', 3, 10, 1000, 1),
+    ('Teclado Logitech', 3, 10, 1000, 1),
+    ('Auriculares Gamer Logitech', 4, 15, 800, 1),
+    ('Auriculares Gamer HyperX', 4, 20, 680, 1),
+    ('Auriculares RGB Redragon', 4, 35, 950, 1),
+    ('Memoria RGB Kingston', 5, 10, 200, 1),
+    ('Ventilador Cooler Master', 6, 20, 200, 1),
+    ('Ventilador Mini Lenovo', 6, 15, 200, 1);
 
 SELECT * FROM Product;
 
@@ -62,19 +62,19 @@ SELECT * FROM Product;
 
 INSERT INTO Menu(name, icon, url)
 VALUES
-    ('Dashboard', 'dashboard', '/pages/dashboard'),
-    ('Users', 'group', '/pages/users'),
-    ('Products', 'collections_bookmark', '/pages/products'),
-    ('Sales', 'currency_exchange', '/pages/sales'),
-    ('Sales History', 'edit_note', '/pages/sales_history'),
-    ('Reports', 'receipt', '/pages/reports');
+    ('Tablero', 'dashboard', '/pages/dashboard'),
+    ('Usuarios', 'group', '/pages/users'),
+    ('Productos', 'collections_bookmark', '/pages/products'),
+    ('Ventas', 'currency_exchange', '/pages/sales'),
+    ('Historial de Ventas', 'edit_note', '/pages/sales_history'),
+    ('Reportes', 'receipt', '/pages/reports');
 
 SELECT * FROM Menu;
 
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 
----------- Menu for Administrator ----------
+---------- Menú para Administrador ----------
 INSERT INTO MenuRole(idMenu, idRole)
 VALUES
     (1, 1),
@@ -84,13 +84,13 @@ VALUES
     (5, 1),
     (6, 1);
 
----------- Menu for Employee ----------
+---------- Menú para Empleado ----------
 INSERT INTO MenuRole(idMenu, idRole)
 VALUES
     (4, 2),
     (5, 2);
 
----------- Menu for Supervisor ----------
+---------- Menú para Supervisor ----------
 INSERT INTO MenuRole(idMenu, idRole)
 VALUES
     (3, 3),

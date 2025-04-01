@@ -1,1 +1,83 @@
-<p>users works!</p>
+<!-- Encabezado principal de la sección -->
+<h1>Usuarios</h1>
+
+<!-- Tarjeta de Material Design que contiene el contenido relacionado con los usuarios -->
+<mat-card>
+    <!-- Título de la tarjeta -->
+    <mat-card-title>
+        <!-- Botón para crear un nuevo usuario -->
+        <button mat-raised-button (click)="newUser  ()" class="customButton">
+            <mat-icon mat-list-icon>add</mat-icon>  <!-- Ícono que representa la acción de agregar -->
+            Nuevo Usuario                           <!-- Texto del botón -->
+        </button>
+    </mat-card-title>
+
+    <!-- Separador visual entre el título y el contenido de la tarjeta -->
+    <mat-divider></mat-divider>
+
+    <!-- Contenido principal de la tarjeta -->
+    <mat-card-content class="dashboard-card-content">
+        <!-- Campo de formulario para buscar usuarios -->
+        <mat-form-field appearance="fill">
+            <mat-label>Buscar</mat-label>                               <!-- Etiqueta que indica que el campo es para buscar -->
+            <input matInput (keyup)="applyTableFilter($event)" #input>  <!-- Campo de entrada que aplica un filtro a la tabla al escribir -->
+        </mat-form-field>
+
+        <!-- Contenedor que aplica una elevación a la tabla -->
+        <div class="mat-elevation-z2">
+            <!-- Tabla que muestra la lista de usuarios -->
+            <table mat-table [dataSource]="dataListUsers" class="mat-elevation-z8">
+                <!-- Definición de la columna para el nombre completo -->
+                <ng-container matColumnDef="fullName">
+                    <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>        <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>  <!-- Celdas que muestran el nombre completo de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para el correo electrónico -->
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> Correo </th>             <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td> <!-- Celdas que muestran el correo electrónico de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="roleDescription">
+                    <th mat-header-cell *matHeaderCellDef> Rol </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.roleDescription}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para el estado del usuario -->
+                <ng-container matColumnDef="state">
+                    <th mat-header-cell *matHeaderCellDef> Estado </th> <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.isActive == 1 ? 'Activo':'Desactivado'}} </td> <!-- Celdas que muestran "Activo" o "Desactivado" según el estado del usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para las acciones -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef class="Actions"></th> <!-- Encabezado de la columna vacío -->
+                    <td mat-cell *matCellDef="let element"> <!-- Celdas que contienen botones para editar y eliminar usuarios -->
+                        <!-- Botón para editar un usuario -->
+                        <button mat-icon-button (click)="editUser  (element)" class="customIconEdit">
+                            <mat-icon>edit</mat-icon> <!-- Ícono que representa la acción de editar -->
+                        </button>
+                        <!-- Botón para eliminar un usuario -->
+                        <button mat-icon-button (click)="deleteUser  (element)" class="customIconDelete">
+                            <mat-icon>delete</mat-icon> <!-- Ícono que representa la acción de eliminar -->
+                        </button>
+                    </td>
+                </ng-container>
+
+                <!-- Fila del encabezado de la tabla -->
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <!-- Fila de datos de la tabla -->
+                <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+                <!-- Fila que se muestra si no hay datos que coincidan con el filtro -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="5">No hay datos que coincidan con el filtro "{{input.value}}"</td> <!-- Mensaje que se muestra si no hay coincidencias -->
+                </tr>
+            </table>
+
+            <!-- Componente de paginación para la tabla -->
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

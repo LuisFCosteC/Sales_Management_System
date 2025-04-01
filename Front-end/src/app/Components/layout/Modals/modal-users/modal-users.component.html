@@ -1,0 +1,71 @@
+<!-- Título del diálogo, que muestra la acción actual y la palabra "Usuario" -->
+<h2 mat-dialog-title class="titleH2">{{titleAction}} Usuario</h2>
+
+<!-- Contenido del diálogo que contiene el formulario -->
+<mat-dialog-content>
+    <!-- Formulario que utiliza Angular Reactive Forms, vinculado a 'formsUsers' -->
+    <form [formGroup]="formsUsers">
+
+        <!-- Lista de cuadrícula para organizar los campos del formulario -->
+        <mat-grid-list cols="1" rowHeight="85px">
+
+            <!-- Primer campo: Nombre Completo -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre Completo</mat-label>                          <!-- Etiqueta del campo -->
+                    <input matInput autocomplete="off" formControlName="fullName">  <!-- Campo de entrada para el nombre completo -->
+                    <mat-icon matSuffix>account-box</mat-icon>                      <!-- Ícono que representa un usuario -->
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <!-- Segundo campo: Correo -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>                                   <!-- Etiqueta del campo -->
+                    <input matInput autocomplete="off" formControlName="email">     <!-- Campo de entrada para el correo -->
+                    <mat-icon matSuffix>mail</mat-icon>                             <!-- Ícono que representa un correo -->
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <!-- Tercer campo: Rol -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Rol</mat-label>                                              <!-- Etiqueta del campo -->
+                    <mat-select formControlName="idRole">                                   <!-- Componente de selección para el rol -->
+                        <mat-option *ngFor="let item of listRole" [value]="item.idRole">    <!-- Genera opciones dinámicamente a partir de 'listRole' -->
+                            {{item.name}}                                                   <!-- Muestra el nombre del rol -->
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <!-- Cuarto campo: Contraseña -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>                                                                       <!-- Etiqueta del campo -->
+                    <input matInput [type]="hidePassword ? 'password':'text'" formControlName="password">                   <!-- Campo de entrada para la contraseña -->
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">                 <!-- Botón para alternar la visibilidad de la contraseña -->
+                        <mat-icon matSuffix class="iconMat">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>   <!-- Ícono que cambia según la visibilidad de la contraseña -->
+                    </button>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <!-- Quinto campo: Estado -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Estado</mat-label>                       <!-- Etiqueta del campo -->
+                    <mat-select formControlName="isActive">             <!-- Componente de selección para el estado -->
+                        <mat-option value="1">Activo</mat-option>       <!-- Opción para estado activo -->
+                        <mat-option value="0">Desactivado</mat-option>  <!-- Opción para estado desactivado -->
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<!-- Acciones del diálogo, alineadas al final -->
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close class="buttonReturn">Volver</button>                                                     <!-- Botón para cerrar el diálogo y volver -->
+    <button mat-raised-button class="buttonSave" [disabled]="formsUsers.invalid" (click)="SaveEdit_Users()">{{buttonAction}}</button>   <!-- Botón para guardar cambios, deshabilitado si el formulario es inválido -->
+</mat-dialog-actions>
