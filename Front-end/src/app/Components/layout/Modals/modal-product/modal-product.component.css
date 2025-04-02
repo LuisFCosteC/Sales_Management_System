@@ -30,9 +30,3 @@ form {
     background-color: #FF8F00;  /* Establece un color de fondo naranja para el botón de "Volver" */
     color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
 }
-
-/* Estilo para el botón de "Guardar" */
-.buttonSave {
-    background-color: #2e7d32;  /* Establece un color de fondo verde oscuro para el botón de "Guardar" */
-    color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
-}

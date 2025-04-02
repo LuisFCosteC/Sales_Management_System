@@ -1,4 +1,5 @@
 h1 {
+    color: #1565c0;
     margin: 20px 0px 0px 40px;
 }
 
@@ -7,6 +8,7 @@ table{
 }
 
 mat-card {
+    background-color: #81d4fa;
     margin: 20px 40px 40px 40px;
 }
 
@@ -19,9 +21,8 @@ mat-form-field {
     margin-top: 10px;
 }
 
-.mat-form-field {
-    font-size: 14px;
-    width: 100%;
+.formField{
+    background-color: #81d4fa;
 }
 
 .Actions {

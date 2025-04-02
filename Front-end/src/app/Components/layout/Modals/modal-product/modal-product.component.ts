@@ -59,7 +59,7 @@ export class ModalProductComponent implements OnInit {
         idCategory: this.dataProduct.idCategory,
         stock: this.dataProduct.stock,
         price: this.dataProduct.price,
-        isActive: this.dataProduct.isActive
+        isActive: this.dataProduct.isActive.toString()
       });
     }
   }
@@ -71,7 +71,7 @@ export class ModalProductComponent implements OnInit {
       idCategory: this.formsProduct.value.idCategory,
       descriptionCategory: "",
       price: this.formsProduct.value.price,
-      stock: this.formsProduct.value.price,
+      stock: this.formsProduct.value.stock,
       isActive: parseInt(this.formsProduct.value.isActive)
     };
 

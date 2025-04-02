@@ -18,7 +18,7 @@
     <!-- Contenido principal de la tarjeta -->
     <mat-card-content class="dashboard-card-content">
         <!-- Campo de formulario para buscar usuarios -->
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
             <mat-label>Buscar</mat-label>                               <!-- Etiqueta que indica que el campo es para buscar -->
             <input matInput (keyup)="applyTableFilter($event)" #input>  <!-- Campo de entrada que aplica un filtro a la tabla al escribir -->
         </mat-form-field>
