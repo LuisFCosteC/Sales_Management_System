@@ -31,6 +31,12 @@ form {
     color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
 }
 
+/* Estilo para el botón de "Guardar" cuando está desactivado */
+.buttonSave:disabled {
+    background-color: #9e9e9e;  /* Color gris */
+    color: white;               /* Color del texto blanco */
+}
+
 /* Estilo para el botón de "Guardar" */
 .buttonSave {
     background-color: #2e7d32;  /* Establece un color de fondo verde oscuro para el botón de "Guardar" */

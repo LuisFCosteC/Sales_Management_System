@@ -20,7 +20,7 @@ export class ModalProductComponent implements OnInit {
   // Propiedades del componente
   formsProduct: FormGroup;            
   titleAction: string = "Agregar";  
-  buttonAction: string = "Save";    
+  buttonAction: string = "Guardar";    
   listCategory: Category[] = [];    
 
   constructor(
