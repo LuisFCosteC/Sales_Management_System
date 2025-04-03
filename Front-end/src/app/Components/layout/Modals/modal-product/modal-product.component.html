@@ -1,57 +1,81 @@
-<h2 mat-dialog-title class="titleH2">{{titleAction}} Producto</h2>
-
-<mat-dialog-content>
+<!-- Diálogo para creación/edición de productos -->
+<h2 mat-dialog-title class="titleH2">
+    {{titleAction}} Producto  <!-- Muestra "Crear" o "Editar" según la acción -->
+  </h2>
+  
+  <!-- Contenido principal del diálogo -->
+  <mat-dialog-content>
+    <!-- Formulario reactivo vinculado a formsProduct -->
     <form [formGroup]="formsProduct">
-        <mat-grid-list cols="1" rowHeight="85px">
-            <mat-grid-tile>
-                <mat-form-field appearance="outline">
-                    <mat-label>Nombre</mat-label>
-                    <input matInput autocomplete="off" formControlName="name">
-                    <mat-icon matSuffix>fit_screen</mat-icon>
-                </mat-form-field>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <mat-form-field appearance="outline">
-                    <mat-label>Categoria</mat-label>
-                    <mat-select formControlName="idCategory">
-                        <mat-option *ngFor="let item of listCategory" [value]="item.idCategory">
-                            {{item.name}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <mat-form-field appearance="outline">
-                    <mat-label>Stock</mat-label>
-                    <input matInput autocomplete="off" formControlName="stock" type="number">
-                    <mat-icon matSuffix>edit_square</mat-icon>
-                </mat-form-field>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <mat-form-field appearance="outline">
-                    <mat-label>Precio</mat-label>
-                    <input matInput autocomplete="off" formControlName="price">
-                    <mat-icon matSuffix>attach_money</mat-icon>
-                </mat-form-field>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <mat-form-field appearance="outline">
-                    <mat-label>Estado</mat-label>
-                    <mat-select formControlName="isActive">
-                        <mat-option value="1">Activo</mat-option>
-                        <mat-option value="0">Desactivado</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </mat-grid-tile>
-        </mat-grid-list>
+      <!-- Grid de una columna con altura fija por fila -->
+      <mat-grid-list cols="1" rowHeight="85px">
+        
+        <!-- Campo 1: Nombre del producto -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput autocomplete="off" formControlName="name">
+            <!-- Icono decorativo -->
+            <mat-icon matSuffix>fit_screen</mat-icon>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+        <!-- Campo 2: Selección de categoría -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="idCategory">
+              <!-- Opciones dinámicas cargadas desde listCategory -->
+              <mat-option *ngFor="let item of listCategory" [value]="item.idCategory">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+        <!-- Campo 3: Stock (numérico) -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <input matInput autocomplete="off" formControlName="stock" type="number">
+            <mat-icon matSuffix>edit_square</mat-icon>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+        <!-- Campo 4: Precio -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input matInput autocomplete="off" formControlName="price">
+            <mat-icon matSuffix>attach_money</mat-icon>
+          </mat-form-field>
+        </mat-grid-tile>
+  
+        <!-- Campo 5: Estado (Activo/Inactivo) -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <mat-select formControlName="isActive">
+              <!-- Valores estáticos para estado -->
+              <mat-option value="1">Activo</mat-option>
+              <mat-option value="0">Desactivado</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
     </form>
-</mat-dialog-content>
-
-<mat-dialog-actions align="end">
+  </mat-dialog-content>
+  
+  <!-- Acciones del diálogo (footer) -->
+  <mat-dialog-actions align="end">
+    <!-- Botón para cerrar/cancelar -->
     <button mat-raised-button mat-dialog-close class="buttonReturn">Volver</button>
-    <button mat-raised-button class="buttonSave" [disabled]="formsProduct.invalid" (click)="SaveEdit_Product()">{{buttonAction}}</button>
-</mat-dialog-actions>
+    
+    <!-- Botón para guardar: 
+         - Deshabilitado si el formulario es inválido
+         - Ejecuta SaveEdit_Product() al hacer click
+         - Texto dinámico según la acción (Crear/Editar) -->
+    <button mat-raised-button class="buttonSave" [disabled]="formsProduct.invalid" (click)="SaveEdit_Product()">
+      {{buttonAction}}
+    </button>
+  </mat-dialog-actions>

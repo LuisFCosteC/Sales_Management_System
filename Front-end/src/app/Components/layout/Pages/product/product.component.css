@@ -1,38 +1,49 @@
+/* Estilos para el componente de lista de productos */
+
+/* Estilo para el título principal */
 h1 {
-    color: #1565c0;
-    margin: 20px 0px 0px 40px;
+    color: #1565c0;          /* Color azul oscuro (paleta Material Design) */
+    margin: 20px 0px 0px 40px; /* Margen: arriba 20px, derecha/abajo 0, izquierda 40px */
 }
 
-table{
-    width: 100%;
+/* Estilo base para la tabla */
+table {
+    width: 100%;            /* Ocupa el 100% del ancho disponible */
 }
 
+/* Estilo para la tarjeta contenedora principal */
 mat-card {
-    background-color: #81d4fa;
-    margin: 20px 40px 40px 40px;
+    background-color: #81d4fa;  /* Color azul claro (Material Design) */
+    margin: 20px 40px 40px 40px; /* Margen: arriba 20px, laterales 40px, abajo 40px */
 }
 
+/* Estilo para el botón personalizado (Nuevo Producto) */
 .customButton {
-    background-color: #1565c0;
-    color: white;
+    background-color: #1565c0;  /* Mismo azul que el título para consistencia */
+    color: white;               /* Texto en blanco para contraste */
 }
 
+/* Estilo para los campos de formulario */
 mat-form-field {
-    margin-top: 10px;
+    margin-top: 10px;          /* Margen superior para separar del contenido superior */
 }
 
-.formField{
-    background-color: #81d4fa;
+/* Clase para campos de formulario (no se usa actualmente en el HTML) */
+.formField {
+    background-color: #81d4fa;  /* Mismo color que la tarjeta */
 }
 
+/* Estilo para la columna de acciones */
 .Actions {
-    width: 120px;
+    width: 120px;              /* Ancho fijo para la columna de acciones */
 }
 
+/* Estilo para el ícono de edición */
 .customIconEdit {
-    color: #FF8F00;
+    color: #FF8F00;            /* Color naranja para el botón de editar */
 }
 
+/* Estilo para el ícono de eliminación */
 .customIconDelete {
-    color: red;
+    color: red;                /* Color rojo para el botón de eliminar (llamativo) */
 }

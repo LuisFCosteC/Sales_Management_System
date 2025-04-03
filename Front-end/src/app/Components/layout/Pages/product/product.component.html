@@ -1,68 +1,101 @@
-<h1>Productos</h1>
+<!-- Componente de lista de productos -->
+<h1>Productos</h1> <!-- Título principal de la página -->
 
+<!-- Tarjeta contenedora principal -->
 <mat-card>
+    <!-- Encabezado de la tarjeta -->
     <mat-card-title>
+        <!-- Botón para crear nuevo producto -->
         <button mat-raised-button (click)="newProduct()" class="customButton">
-            <mat-icon mat-list-icon>add</mat-icon>
-            Nuevo Producto
+            <mat-icon mat-list-icon>add</mat-icon> <!-- Icono de añadir -->
+            Nuevo Producto <!-- Texto del botón -->
         </button>
     </mat-card-title>
 
+    <!-- Divisor visual -->
     <mat-divider></mat-divider>
 
+    <!-- Contenido principal de la tarjeta -->
     <mat-card-content class="dashboard-card-content">
+        <!-- Campo de búsqueda -->
         <mat-form-field appearance="outline">
             <mat-label>Buscar</mat-label>
-            <input matInput (keyup)="applyTableFilter($event)" #input>
+            <input matInput (keyup)="applyTableFilter($event)" #input> 
+            <!-- 
+              - Input de búsqueda que dispara applyTableFilter() al teclear
+              - #input es una referencia local para acceder al valor del input
+            -->
         </mat-form-field>
 
+        <!-- Contenedor de la tabla con sombra -->
         <div class="mat-elevation-z2">
+            <!-- Tabla de productos -->
             <table mat-table [dataSource]="dataListProduct" class="mat-elevation-z8">
+                <!-- Columna: Nombre del producto -->
                 <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th> <!-- Encabezado -->
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td> <!-- Celda con dato -->
                 </ng-container>
 
+                <!-- Columna: Categoría -->
                 <ng-container matColumnDef="category">
                     <th mat-header-cell *matHeaderCellDef> Categoria </th>
                     <td mat-cell *matCellDef="let element"> {{element.categoryDescription}} </td>
                 </ng-container>
 
+                <!-- Columna: Stock -->
                 <ng-container matColumnDef="stock">
                     <th mat-header-cell *matHeaderCellDef> Stock </th>
                     <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
                 </ng-container>
 
+                <!-- Columna: Precio -->
                 <ng-container matColumnDef="price">
                     <th mat-header-cell *matHeaderCellDef> Precio </th>
                     <td mat-cell *matCellDef="let element"> {{element.price}} </td>
                 </ng-container>
 
+                <!-- Columna: Estado (Activo/Inactivo) -->
                 <ng-container matColumnDef="state">
                     <th mat-header-cell *matHeaderCellDef> Estado </th>
-                    <td mat-cell *matCellDef="let element"> {{element.isActive == 1 ? 'Activo':'Desactivado'}} </td>
+                    <td mat-cell *matCellDef="let element"> 
+                        {{element.isActive == 1 ? 'Activo':'Desactivado'}} <!-- Operador ternario para mostrar estado -->
+                    </td>
                 </ng-container>
 
+                <!-- Columna: Acciones (Editar/Eliminar) -->
                 <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef class="Actions"></th>
+                    <th mat-header-cell *matHeaderCellDef class="Actions"></th> <!-- Encabezado vacío -->
                     <td mat-cell *matCellDef="let element">
-                        <button mat-icon-button (click)="editProduct (element)" class="customIconEdit">
-                            <mat-icon>edit</mat-icon>
+                        <!-- Botón para editar -->
+                        <button mat-icon-button (click)="editProduct(element)" class="customIconEdit">
+                            <mat-icon>edit</mat-icon> <!-- Icono de edición -->
                         </button>
-                        <button mat-icon-button (click)="deleteProduct (element)" class="customIconDelete">
-                            <mat-icon>delete</mat-icon>
+                        <!-- Botón para eliminar -->
+                        <button mat-icon-button (click)="deleteProduct(element)" class="customIconDelete">
+                            <mat-icon>delete</mat-icon> <!-- Icono de eliminar -->
                         </button>
                     </td>
                 </ng-container>
 
+                <!-- Fila de encabezados -->
                 <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <!-- Filas de datos -->
                 <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+                <!-- Fila que se muestra cuando no hay datos -->
                 <tr class="mat-row" *matNoDataRow>
-                    <td class="mat-cell" colspan="5">No hay datos que coincidan con el filtro "{{input.value}}"</td>
+                    <td class="mat-cell" colspan="5">
+                        No hay datos que coincidan con el filtro "{{input.value}}"
+                    </td>
                 </tr>
             </table>
 
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>
+            <!-- Paginador -->
+            <mat-paginator 
+                [pageSizeOptions]="[5, 10, 20]" 
+                showFirstLastButtons 
+                aria-label="Select page of users">
+            </mat-paginator>
         </div>
     </mat-card-content>
 </mat-card>

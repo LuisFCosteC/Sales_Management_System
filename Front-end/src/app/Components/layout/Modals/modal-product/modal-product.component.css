@@ -1,44 +1,49 @@
-/* Estilo para los campos de formulario */
+/* Estilos para el componente de formulario de productos */
+
+/* Establece el ancho completo y margen para todos los campos de formulario */
 mat-form-field {
-    width: 100%;        /* Establece el ancho del campo de formulario al 100% de su contenedor padre */
-    margin: 10px 10px;  /* Aplica un margen de 10 píxeles en la parte superior e inferior y 10 píxeles a los lados */
+    width: 100%;          /* Ocupa el 100% del ancho disponible */
+    margin: 10px 10px;    /* Margen vertical y horizontal de 10px */
 }
 
-/* Estilo para la lista de cuadrícula */
+/* Estilos para la cuadrícula que contiene los campos */
 mat-grid-list {
-    margin-top: 20px; /* Agrega un margen superior de 20 píxeles para separar la cuadrícula del contenido anterior */
+    margin-top: 20px;     /* Margen superior de 20px para separar del título */
 }
 
-/* Estilo para el título del diálogo */
+/* Estilos para el título del diálogo */
 .titleH2 {
-    background-color: #1565c0;  /* Establece un color de fondo azul oscuro para el título */
-    color: white;               /* Cambia el color del texto a blanco para un buen contraste con el fondo */
+    background-color: #1565c0;  /* Fondo azul oscuro */
+    color: white;               /* Texto en blanco */
+    /* Nota: Considerar añadir padding para mejor visualización */
 }
 
-/* Estilo para los íconos */
+/* Estilos para los iconos dentro del formulario */
 mat-icon {
-    color: #1565c0; /* Asigna el color azul oscuro a los íconos, asegurando consistencia visual con el título */
+    color: #1565c0;       /* Color azul oscuro para los iconos */
 }
 
-/* Estilo para el formulario */
+/* Estilos generales del formulario */
 form {
-    width: 350px; /* Establece un ancho fijo de 350 píxeles para el formulario */
+    width: 350px;         /* Ancho fijo del formulario */
+    /* Considerar hacerlo responsive para móviles */
 }
 
-/* Estilo para el botón de "Volver" */
+/* Estilos para el botón "Volver" */
 .buttonReturn {
-    background-color: #FF8F00;  /* Establece un color de fondo naranja para el botón de "Volver" */
-    color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
+    background-color: #FF8F00;  /* Color naranja */
+    color: white;              /* Texto en blanco */
 }
 
-/* Estilo para el botón de "Guardar" cuando está desactivado */
+/* Estilos para el botón "Guardar" cuando está deshabilitado */
 .buttonSave:disabled {
-    background-color: #9e9e9e;  /* Color gris */
-    color: white;               /* Color del texto blanco */
+    background-color: #9e9e9e;  /* Gris medio para estado deshabilitado */
+    color: white;
 }
 
-/* Estilo para el botón de "Guardar" cuando está activo */
+/* Estilos para el botón "Guardar" en estado normal */
 .buttonSave {
-    background-color: #2e7d32;  /* Color verde oscuro */
-    color: white;               /* Color del texto blanco */
+    background-color: #2e7d32;  /* Verde oscuro */
+    color: white;
+    /* Considerar añadir :hover effect para mejor UX */
 }
