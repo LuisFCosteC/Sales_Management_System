@@ -1,24 +1,44 @@
-h1 {
+/* 
+ * Estilos para el título principal h1 "Nueva Venta"
+ * Color azul oscuro (#1565c0) y márgenes específicos
+ */
+ h1 {
     color: #1565c0;
-    margin: 20px 0px 0px 40px;
+    margin: 20px 0px 0px 40px; /* margen superior 20px, laterales 0, izquierdo 40px */
 }
 
+/* 
+ * Estilos para la tarjeta principal (mat-card)
+ * Fondo azul claro (#81d4fa) y márgenes en todos lados
+ */
 mat-card {
     background-color: #81d4fa;
-    margin: 20px 40px 40px 40px;
+    margin: 20px 40px 40px 40px; /* margen superior 20px, derecho 40px, inferior 40px, izquierdo 40px */
 }
 
+/* 
+ * Estilos generales para los campos de formulario (mat-form-field)
+ * Margen superior y ancho muy amplio (2000px)
+ */
 mat-form-field {
     margin-top: 10px;
-    width: 2000px;
+    width: 2000px; /* Ancho excesivamente grande que probablemente debería ser relativo */
 }
 
+/* 
+ * Estilos para el botón personalizado cuando está deshabilitado
+ * Fondo gris, texto blanco y bordes redondeados
+ */
 .customButton:disabled {
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
     background-color: gray;
     color: white;
 }
 
+/* 
+ * Estilos para el botón personalizado en estado normal
+ * Fondo azul oscuro, texto blanco, bordes redondeados y ancho al 80%
+ */
 .customButton {
     border-radius: 0.5rem;
     width: 80%;
@@ -26,28 +46,48 @@ mat-form-field {
     color: white;
 }
 
+/* 
+ * Estilos para el botón que muestra el total
+ * Bordes redondeados, ancho al 80% y tamaño de fuente aumentado
+ */
 .customButtonTotal {
     border-radius: 0.5rem;
     width: 80%;
-    font-size: 18px;
+    font-size: 18px; /* Tamaño de fuente más grande */
 }
 
-table{
+/* 
+ * Estilos para las tablas
+ * Ocupan el 100% del ancho disponible
+ */
+table {
     width: 100%;
 }
 
+/* 
+ * Estilos para el ícono de eliminar
+ * Color rojo para indicar acción destructiva
+ */
 .customIconDelete {
     color: red;
 }
 
+/* 
+ * Estilos para el botón de registrar cuando está deshabilitado
+ * Mismo color que el fondo de la tarjeta para camuflarse
+ */
 .customIconRegister:disabled {
     border-radius: 0.5rem;
     width: 100%;
-    height: 60%;
+    height: 60%; /* Altura reducida */
     background-color: #81d4fa;
-    color: #81d4fa;
+    color: #81d4fa; /* Mismo color que el fondo hace que el texto no sea visible */
 }
 
+/* 
+ * Estilos para el botón de registrar en estado normal
+ * Fondo azul oscuro, texto blanco, bordes redondeados
+ */
 .customIconRegister {
     border-radius: 0.5rem;
     width: 100%;
