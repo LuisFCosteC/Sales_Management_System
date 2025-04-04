@@ -1,13 +1,18 @@
+/* Estilo para los campos de formulario (mat-form-field) */
 mat-form-field {
-    width: 95%;
+    width: 95%; /* Ancho casi completo (95% del contenedor padre) */
+    /* Esto permite un pequeño margen a los lados del campo */
 }
 
-/* Estilo para el botón de "Volver" */
+/* Estilo para el botón de retorno/volver */
 .buttonReturn {
-    background-color: #FF8F00;  /* Establece un color de fondo naranja para el botón de "Volver" */
-    color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
+    background-color: #FF8F00; /* Color naranja para el fondo */
+    color: white;             /* Texto en color blanco para contraste */
+    /* Nota: Sería recomendable añadir :hover y :focus states para mejor accesibilidad */
 }
 
-table{
-    width: 100%;
+/* Estilo para la tabla de productos */
+table {
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    /* Esto asegura que la tabla se expanda completamente en su contenedor */
 }
