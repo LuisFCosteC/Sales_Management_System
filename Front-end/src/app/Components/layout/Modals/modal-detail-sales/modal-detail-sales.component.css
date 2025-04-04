@@ -1,0 +1,13 @@
+mat-form-field {
+    width: 95%;
+}
+
+/* Estilo para el botón de "Volver" */
+.buttonReturn {
+    background-color: #FF8F00;  /* Establece un color de fondo naranja para el botón de "Volver" */
+    color: white;               /* Cambia el color del texto a blanco para asegurar su legibilidad */
+}
+
+table{
+    width: 100%;
+}
