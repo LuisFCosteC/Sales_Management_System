@@ -1,0 +1,48 @@
+h1 {
+    color: #1565c0;
+    margin: 20px 0px 0px 40px;
+}
+
+mat-card {
+    background-color: #81d4fa;
+    margin: 20px 40px 40px 40px;
+}
+
+mat-form-field {
+    margin: 10px 10px;
+}
+
+mat-grid-list {
+    margin-top: 20px;
+}
+
+.input-field-Search {
+    margin-right: 40px;
+}
+
+.input-field-Number {
+    width: 48%;
+    margin: 10px 10px;
+}
+
+.customButton:disabled {
+    margin-left: 130px;
+    border-radius: 0.5rem;
+    background-color: gray;
+    color: white;
+}
+
+.customButton {
+    margin-left: 130px;
+    border-radius: 0.5rem;
+    background-color: #1565c0;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.customIcon {
+    color: #1565c0;
+}

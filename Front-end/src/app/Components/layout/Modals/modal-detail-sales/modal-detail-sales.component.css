@@ -4,6 +4,10 @@ mat-form-field {
     /* Esto permite un pequeño margen a los lados del campo */
 }
 
+mat-dialog-content {
+    width: 100% !important;
+}
+
 /* Estilo para el botón de retorno/volver */
 .buttonReturn {
     background-color: #FF8F00; /* Color naranja para el fondo */
