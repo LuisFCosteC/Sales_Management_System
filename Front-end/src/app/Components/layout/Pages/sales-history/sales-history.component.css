@@ -1,48 +1,58 @@
+/* Estilos para el título principal */
 h1 {
-    color: #1565c0;
-    margin: 20px 0px 0px 40px;
+    color: #1565c0; /* Color azul oscuro para el texto */
+    margin: 20px 0px 0px 40px; /* Margen superior 20px, laterales 40px */
 }
 
+/* Estilos para la tarjeta contenedora principal */
 mat-card {
-    background-color: #81d4fa;
-    margin: 20px 40px 40px 40px;
+    background-color: #81d4fa; /* Color azul claro de fondo */
+    margin: 20px 40px 40px 40px; /* Margen superior 20px, laterales y abajo 40px */
 }
 
+/* Estilos base para todos los campos de formulario */
 mat-form-field {
-    margin: 10px 10px;
+    margin: 10px 10px; /* Margen uniforme de 10px alrededor */
 }
 
+/* Estilos para la cuadrícula (grid list) */
 mat-grid-list {
-    margin-top: 20px;
+    margin-top: 20px; /* Margen superior de 20px */
 }
 
+/* Estilos específicos para el campo de búsqueda */
 .input-field-Search {
-    margin-right: 40px;
+    margin-right: 40px; /* Margen derecho más grande para separación */
 }
 
+/* Estilos específicos para el campo de número de venta */
 .input-field-Number {
-    width: 48%;
-    margin: 10px 10px;
+    width: 48%; /* Ancho casi medio para alineación */
+    margin: 10px 10px; /* Margen uniforme */
 }
 
+/* Estilos para el botón cuando está deshabilitado */
 .customButton:disabled {
-    margin-left: 130px;
-    border-radius: 0.5rem;
-    background-color: gray;
-    color: white;
+    margin-left: 130px; /* Margen izquierdo grande para alineación */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    background-color: gray; /* Fondo gris */
+    color: white; /* Texto blanco */
 }
 
+/* Estilos para el botón en estado normal */
 .customButton {
-    margin-left: 130px;
-    border-radius: 0.5rem;
-    background-color: #1565c0;
-    color: white;
+    margin-left: 130px; /* Margen izquierdo grande para alineación */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    background-color: #1565c0; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
 }
 
+/* Estilos para la tabla */
 table {
-    width: 100%;
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
+/* Estilos para los iconos de acción */
 .customIcon {
-    color: #1565c0;
+    color: #1565c0; /* Color azul oscuro para los iconos */
 }

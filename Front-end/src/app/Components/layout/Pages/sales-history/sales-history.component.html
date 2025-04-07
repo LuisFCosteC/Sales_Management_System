@@ -1,85 +1,110 @@
+<!-- Título principal de la página -->
 <h1>Historial de Ventas</h1>
+
+<!-- Tarjeta contenedora principal -->
 <mat-card>
     <mat-card-content>
+        <!-- Formulario de búsqueda con enlace al FormGroup y evento submit -->
         <form [formGroup]="searchForm" (ngSubmit)="searchSales()">
             <div class="form-fields">
+                <!-- Campo de selección para tipo de búsqueda -->
                 <mat-form-field appearance="outline" class="input-field-Search">
                     <mat-label>Buscar por</mat-label>
                     <mat-select formControlName="searchBy">
+                        <!-- Itera sobre las opciones de búsqueda disponibles -->
                         <mat-option *ngFor="let item of searchOptions" [value]="item.value">
                             {{ item.description }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
+                <!-- Campo para número de venta - solo visible cuando se selecciona búsqueda por número -->
                 <mat-form-field appearance="outline" *ngIf="searchForm.value.searchBy === 'number'" class="input-field-Number">
                     <mat-label>Numero de Venta</mat-label>
                     <input matInput autocomplete="off" formControlName="number">
                 </mat-form-field>
 
+                <!-- Campo para fecha inicio - solo visible cuando se selecciona búsqueda por fecha -->
                 <mat-form-field appearance="outline" *ngIf="searchForm.value.searchBy === 'date'" class="input-field-Date">
                     <mat-label>Fecha Inicio</mat-label>
                     <input matInput autocomplete="off" formControlName="startDate" [matDatepicker]="picker1">
+                    <!-- Selector de fecha -->
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
 
+                <!-- Campo para fecha fin - solo visible cuando se selecciona búsqueda por fecha -->
                 <mat-form-field appearance="outline" *ngIf="searchForm.value.searchBy === 'date'" class="input-field-Date">
                     <mat-label>Fecha Final</mat-label>
                     <input matInput autocomplete="off" formControlName="endDate" [matDatepicker]="picker2">
+                    <!-- Selector de fecha -->
                     <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                     <mat-datepicker #picker2></mat-datepicker>
                 </mat-form-field>
 
+                <!-- Botón de búsqueda - deshabilitado si el formulario es inválido -->
                 <button mat-raised-button class="customButton" [disabled]="searchForm.invalid" type="submit">
                     <mat-icon>search</mat-icon> Buscar
                 </button>
             </div>
         </form>
 
+        <!-- Divisor visual -->
         <mat-divider></mat-divider>
         
+        <!-- Campo de filtrado rápido de la tabla -->
         <mat-form-field appearance="outline">
             <mat-label>Filtrar</mat-label>
             <input matInput (keyup)="applyTableFilter($event)" #input> 
         </mat-form-field>
 
+        <!-- Contenedor de la tabla con sombra -->
         <div class="mat-elevation-z2">
+            <!-- Tabla de datos con fuente de datos enlazada -->
             <table mat-table [dataSource]="salesListData" class="mat-elevation-z8">
 
+                <!-- Columna: Fecha de Registro -->
                 <ng-container matColumnDef="dateRegistration">
                     <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
                     <td mat-cell *matCellDef="let element"> {{element.dateRegistration}} </td>
                 </ng-container>
         
+                <!-- Columna: Número de Venta -->
                 <ng-container matColumnDef="salesNumber">
                     <th mat-header-cell *matHeaderCellDef> Numero Venta </th>
                     <td mat-cell *matCellDef="let element"> {{element.salesNumber}} </td>
                 </ng-container>
         
+                <!-- Columna: Tipo de Pago -->
                 <ng-container matColumnDef="paymentType">
                     <th mat-header-cell *matHeaderCellDef> Tipo de Pago </th>
                     <td mat-cell *matCellDef="let element"> {{element.paymentType}} </td>
                 </ng-container>
         
+                <!-- Columna: Total -->
                 <ng-container matColumnDef="total">
                     <th mat-header-cell *matHeaderCellDef> Total </th>
                     <td mat-cell *matCellDef="let element"> {{element.totalText}} </td>
                 </ng-container>
         
+                <!-- Columna: Acciones -->
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef class="actions"></th>
                     <td mat-cell *matCellDef="let element">
+                        <!-- Botón para ver detalles de la venta -->
                         <button mat-icon-button (click)="seeDetailSales(element)" matTooltip="Ver detalle" class="customIcon">
                             <mat-icon>visibility</mat-icon>
                         </button>
                     </td>
                 </ng-container>
-                <!-- Fila de encabezados -->
+                
+                <!-- Fila de encabezados - define qué columnas mostrar -->
                 <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
-                <!-- Filas de datos -->
+                
+                <!-- Filas de datos - muestra los datos para cada fila -->
                 <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
-                <!-- Fila que se muestra cuando no hay datos -->
+                
+                <!-- Fila que se muestra cuando no hay datos coincidentes -->
                 <tr class="mat-row" *matNoDataRow>
                     <td class="mat-cell" colspan="5">
                         No hay datos que coincidan con el filtro "{{input.value}}"
@@ -87,11 +112,11 @@
                 </tr>
             </table>
 
-            <!-- Paginador -->
+            <!-- Paginador de la tabla -->
             <mat-paginator 
-                [pageSizeOptions]="[5, 10, 20]" 
-                showFirstLastButtons 
-                aria-label="Select page of users">
+                [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+                aria-label="Select page of users"> <!-- Etiqueta para accesibilidad -->
             </mat-paginator>
         </div>
     </mat-card-content>
