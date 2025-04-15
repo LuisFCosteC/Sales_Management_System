@@ -1,1 +1,102 @@
-<p>report works!</p>
+<!-- Título principal de la página -->
+<h1>Reporte de Ventas</h1>
+
+<!-- Tarjeta contenedora principal -->
+<mat-card>
+    <mat-card-content>
+        <!-- Formulario de búsqueda con enlace al FormGroup y evento submit -->
+        <form [formGroup]="filterForm" (ngSubmit)="searchSales()">
+            <div class="form-fields">
+                <!-- Campo para fecha inicio - solo visible cuando se selecciona búsqueda por fecha -->
+                <mat-form-field appearance="outline" class="input-field-Date">
+                    <mat-label>Fecha Inicio</mat-label>
+                    <input matInput autocomplete="off" formControlName="startDate" [matDatepicker]="picker1">
+                    <!-- Selector de fecha -->
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Campo para fecha fin - solo visible cuando se selecciona búsqueda por fecha -->
+                <mat-form-field appearance="outline" class="input-field-Date">
+                    <mat-label>Fecha Final</mat-label>
+                    <input matInput autocomplete="off" formControlName="endDate" [matDatepicker]="picker2">
+                    <!-- Selector de fecha -->
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Botón de búsqueda - deshabilitado si el formulario es inválido -->
+                <button mat-raised-button class="customButton" [disabled]="filterForm.invalid" type="submit">
+                    <mat-icon>search</mat-icon> Buscar
+                </button>
+
+                <button mat-raised-button class="customButtonExport" [disabled]="salesListReport.length < 1" (click)="exportExcel()">
+                    <mat-icon>feed</mat-icon> Exportar a Excel
+                </button>
+            </div>
+        </form>
+
+        <!-- Contenedor que aplica una elevación a la tabla -->
+        <div class="mat-elevation-z2">
+            <!-- Tabla que muestra la lista de usuarios -->
+            <table mat-table [dataSource]="dataSalesReport" class="mat-elevation-z8">
+                <!-- Definición de la columna para el nombre completo -->
+                <ng-container matColumnDef="dateRegistration">
+                    <th mat-header-cell *matHeaderCellDef> Fecha de registro </th>        <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.dateRegistration}} </td>  <!-- Celdas que muestran el nombre completo de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para el correo electrónico -->
+                <ng-container matColumnDef="salesNumber">
+                    <th mat-header-cell *matHeaderCellDef> Numero de Venta </th>             <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.salesNumber}} </td> <!-- Celdas que muestran el correo electrónico de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="paymentType">
+                    <th mat-header-cell *matHeaderCellDef> Tipo de Pago </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.paymentType}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="totalSales">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.totalSales}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="product">
+                    <th mat-header-cell *matHeaderCellDef> Producto </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.product}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef> Cantidad </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> Precio del Producto </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.price}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Definición de la columna para la descripción del rol -->
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef> Total por Producto </th>                            <!-- Encabezado de la columna -->
+                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>   <!-- Celdas que muestran la descripción del rol de cada usuario -->
+                </ng-container>
+
+                <!-- Fila del encabezado de la tabla -->
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <!-- Fila de datos de la tabla -->
+                <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+                <!-- Fila que se muestra si no hay datos que coincidan con el filtro -->
+            </table>
+
+            <!-- Componente de paginación para la tabla -->
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>
