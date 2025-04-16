@@ -1,1 +1,48 @@
-<p>dash-board works!</p>
+<h1>Ventas Semanales</h1>
+
+<mat-card>
+    <mat-card-content>
+        <mat-grid-list cols="3" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-card class="card-info">
+                    <mat-card-header>
+                        <div mat-card-avatar>
+                            <mat-icon class="iconPayments">payments</mat-icon>
+                        </div>
+                        <mat-card-title>Ingresos Totales</mat-card-title>
+                        <mat-card-subtitle>$ {{totalRevenues}}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="card-info">
+                    <mat-card-header>
+                        <div mat-card-avatar>
+                            <mat-icon class="iconSell">sell</mat-icon>
+                        </div>
+                        <mat-card-title>Total de Ventas</mat-card-title>
+                        <mat-card-subtitle>{{totalSales}}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="card-info">
+                    <mat-card-header>
+                        <div mat-card-avatar>
+                            <mat-icon class="iconCollectionsBookmark">collections_bookmark</mat-icon>
+                        </div>
+                        <mat-card-title>Total de Productos</mat-card-title>
+                        <mat-card-subtitle>{{totalProducts}}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-card class="cardGraphic">
+            <mat-card-content>
+                <div class="divGraphic">
+                    <canvas id="chartBars"></canvas>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

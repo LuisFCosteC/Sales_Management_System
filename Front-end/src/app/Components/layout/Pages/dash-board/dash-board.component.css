@@ -1,0 +1,46 @@
+h1 {
+    color: #1565c0;
+    margin: 20px 0px 0px 40px;
+}
+
+mat-card {
+    background-color: #81d4fa;
+    margin: 20px 20px;
+}
+
+mat-card-subtitle {
+    color: #616161;
+}
+
+.card-info {
+    width: 80%;
+    background-color: white;
+}
+
+mat-icon {
+    font-size: 40px !important;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.iconPayments{
+    color: #558b2f;
+}
+
+.iconSell{
+    color: #558b2f;
+}
+
+.iconCollectionsBookmark{
+    color: #1565c0;
+}
+
+.cardGraphic{
+    margin-top: 15px;
+    background-color: white;
+}
+
+.divGraphic {
+    width: 100%;
+    height: 400px;
+}
