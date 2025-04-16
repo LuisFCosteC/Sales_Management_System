@@ -1,38 +1,40 @@
-<!-- Barra de herramientas superior -->
-<mat-toolbar class="toolbar">
-    <mat-toolbar-row>                                   <!-- Fila de la barra de herramientas -->
-        <h1>Sistema de Ventas</h1>                      <!-- Título de la barra de herramientas -->
-        <button mat-button (click)="sidenav.toggle()">  <!-- Botón para abrir/cerrar el menú lateral -->
-            <mat-icon class="icon">menu</mat-icon>      <!-- Icono del menú -->
-        </button>
-        <span class="span"></span>
-        <label class="labelUser">
-            {{fullName}} | {{rolUsers}}
-        </label>
-        <button mat-icon-button (click)="logOff()">
-            <mat-icon class="icon">logout</mat-icon>
-        </button>
-    </mat-toolbar-row>
-</mat-toolbar>
+<div class="main-container"> <!-- Contenedor principal que envuelve la barra de herramientas y el contenido -->
+    <!-- Barra de herramientas superior -->
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>                                   <!-- Fila de la barra de herramientas -->
+            <h1>Sistema de Ventas</h1>                      <!-- Título de la barra de herramientas -->
+            <button mat-button (click)="sidenav.toggle()">  <!-- Botón para abrir/cerrar el menú lateral -->
+                <mat-icon class="icon">menu</mat-icon>      <!-- Icono del menú -->
+            </button>
+            <span class="span"></span>
+            <label class="labelUser ">
+                {{fullName}} | {{rolUsers}}
+            </label>
+            <button mat-icon-button (click)="logOff()">
+                <mat-icon class="icon">logout</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
 
-<!-- Contenedor del menú lateral y el contenido principal -->
-<mat-sidenav-container>
-    <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">            <!-- Menú lateral -->
-        <mat-nav-list>                                                          <!-- Lista de elementos del menú -->
-            <!-- Elemento del menú para los reportes -->
-            <mat-list-item *ngFor="let menu of listMenus" [routerLink]="menu.url" class="list-item">
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon class="iconList">{{menu.icon}}</mat-icon>                  <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">{{menu.name}}</span>             <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-sidenav>
+    <!-- Contenedor del menú lateral y el contenido principal -->
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">            <!-- Menú lateral -->
+            <mat-nav-list>                                                          <!-- Lista de elementos del menú -->
+                <!-- Elemento del menú para los reportes -->
+                <mat-list-item *ngFor="let menu of listMenus" [routerLink]="menu.url" class="list-item">
+                    <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
+                        <mat-icon mat-list-icon class="iconList">{{menu.icon}}</mat-icon>                  <!-- Icono de los usuarios -->
+                        <span class="span-div-list-item">{{menu.name}}</span>             <!-- Texto del elemento del menú -->
+                    </div>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
 
-    <!-- Contenido principal -->
-    <mat-sidenav-content>
-        <div style="height: 90vh;">             <!-- Contenedor del contenido principal -->
-            <router-outlet></router-outlet>     <!-- Outlet para el contenido principal -->
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        <!-- Contenido principal -->
+        <mat-sidenav-content>
+            <div style="height: 90.9vh;">             <!-- Contenedor del contenido principal -->
+                <router-outlet></router-outlet>     <!-- Outlet para el contenido principal -->
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

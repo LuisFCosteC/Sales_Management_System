@@ -2,7 +2,7 @@
 
 /* Estilo para el título principal */
 h1 {
-    color: #1565c0;          /* Color azul oscuro (paleta Material Design) */
+    color: white;          /* Color azul oscuro (paleta Material Design) */
     margin: 20px 0px 0px 40px; /* Margen: arriba 20px, derecha/abajo 0, izquierda 40px */
 }
 
@@ -19,6 +19,7 @@ mat-card {
 
 /* Estilo para el botón personalizado (Nuevo Producto) */
 .customButton {
+    border-radius: 0.7rem 2.5rem 0 0;
     background-color: #1565c0;  /* Mismo azul que el título para consistencia */
     color: white;               /* Texto en blanco para contraste */
 }

@@ -3,7 +3,7 @@
  * Color azul oscuro (#1565c0) y márgenes específicos
  */
  h1 {
-    color: #1565c0;
+    color: white;
     margin: 20px 0px 0px 40px; /* margen superior 20px, laterales 0, izquierdo 40px */
 }
 
