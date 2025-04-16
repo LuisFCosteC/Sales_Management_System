@@ -16,7 +16,9 @@ SELECT * FROM Role;
 
 INSERT INTO Users(fullName, email, idRole, password) 
 VALUES
-    ('código de estudiante', 'code@example.com', 1, '123');
+    ('Luis F. Coste C.', 'Luis@gmail.com', 1, '123'),
+	('Maria C. Pinto R.', 'Maria@gmail.com', 2, '123'),
+	('Daniel F. Sanchez C.', 'Daniel@gmail.com', 3, '123');
 
 SELECT * FROM Users;
 
@@ -62,12 +64,12 @@ SELECT * FROM Product;
 
 INSERT INTO Menu(name, icon, url)
 VALUES
-    ('Tablero', 'dashboard', '/pages/dashboard'),
-    ('Usuarios', 'group', '/pages/users'),
-    ('Productos', 'collections_bookmark', '/pages/products'),
-    ('Ventas', 'currency_exchange', '/pages/sales'),
-    ('Historial de Ventas', 'edit_note', '/pages/sales_history'),
-    ('Reportes', 'receipt', '/pages/reports');
+    ('Tablero',				'dashboard',			'/pages/dashboard'),
+    ('Usuarios',			'group',				'/pages/users'),
+    ('Productos',			'collections_bookmark', '/pages/product'),
+    ('Ventas',				'currency_exchange',	'/pages/sales'),
+    ('Historial de Ventas', 'edit_note',			'/pages/sales-history'),
+    ('Reportes',			'receipt',				'/pages/report');
 
 SELECT * FROM Menu;
 

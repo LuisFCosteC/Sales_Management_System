@@ -8,8 +8,8 @@
 }
 
 .sidenav {
-    background-color: #81d4fa;
-    width: 200px;
+    width: 230px;
+    background-color: #1565c0; 
 }
 
 .list-item {
@@ -21,6 +21,19 @@
     align-items: center;
 }
 
+.iconList{
+    color: white !important; 
+}
+
 .span-div-list-item {
     margin-left: 20px;
+    color: white;
+}
+
+.span {
+    flex: 1 1 auto;
+}
+
+.labelUser {
+    margin-right: 30px;
 }

@@ -5,6 +5,13 @@
         <button mat-button (click)="sidenav.toggle()">  <!-- Botón para abrir/cerrar el menú lateral -->
             <mat-icon class="icon">menu</mat-icon>      <!-- Icono del menú -->
         </button>
+        <span class="span"></span>
+        <label class="labelUser">
+            {{fullName}} | {{rolUsers}}
+        </label>
+        <button mat-icon-button (click)="logOff()">
+            <mat-icon class="icon">logout</mat-icon>
+        </button>
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -12,52 +19,11 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav opened="true" mode="side" class="sidenav">            <!-- Menú lateral -->
         <mat-nav-list>                                                          <!-- Lista de elementos del menú -->
-            
-            <!-- Elemento del menú para el dashboard -->
-            <mat-list-item routerLink="/pages/dashboard" class="list-item">    
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>dashboard</mat-icon>                <!-- Icono del dashboard -->
-                    <span class="span-div-list-item">Dashboard</span>           <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-            
-            <!-- Elemento del menú para los usuarios -->
-            <mat-list-item routerLink="/pages/users" class="list-item">
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>group</mat-icon>                    <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">Usuarios</span>            <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-
-            <!-- Elemento del menú para los productos -->
-            <mat-list-item routerLink="/pages/product" class="list-item">
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>collections_bookmark</mat-icon>     <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">Productos</span>           <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-
-            <!-- Elemento del menú para las ventas -->
-            <mat-list-item routerLink="/pages/sales" class="list-item">
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>currency_exchange</mat-icon>        <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">Ventas</span>              <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-
-            <!-- Elemento del menú para el historial de ventas -->
-            <mat-list-item routerLink="/pages/sales-history" class="list-item">
-                <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>edit_note</mat-icon>                <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">Historial Ventas</span>    <!-- Texto del elemento del menú -->
-                </div>
-            </mat-list-item>
-
             <!-- Elemento del menú para los reportes -->
-            <mat-list-item routerLink="/pages/report" class="list-item">
+            <mat-list-item *ngFor="let menu of listMenus" [routerLink]="menu.url" class="list-item">
                 <div class="div-list-item">                                     <!-- Contenedor del elemento del menú -->
-                    <mat-icon mat-list-icon>receipt</mat-icon>                  <!-- Icono de los usuarios -->
-                    <span class="span-div-list-item">Reporte</span>             <!-- Texto del elemento del menú -->
+                    <mat-icon mat-list-icon class="iconList">{{menu.icon}}</mat-icon>                  <!-- Icono de los usuarios -->
+                    <span class="span-div-list-item">{{menu.name}}</span>             <!-- Texto del elemento del menú -->
                 </div>
             </mat-list-item>
         </mat-nav-list>

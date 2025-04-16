@@ -30,7 +30,7 @@ export const MY_DATE_FORMATS = {
   selector: 'app-sales-history',
   standalone: false,
   templateUrl: './sales-history.component.html',
-  styleUrl: './sales-history.component.css',
+  styleUrls: ['./sales-history.component.css'],
   providers: [
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS } // Proveedor del formato de fecha
   ]
