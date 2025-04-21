@@ -27,13 +27,13 @@ mat-grid-list {
 
 /* Estilos específicos para el campo de número de venta */
 .input-field-Number {
-    width: 48%; /* Ancho casi medio para alineación */
+    width: 32%; /* Ancho casi medio para alineación */
     margin: 10px 10px; /* Margen uniforme */
 }
 
 /* Estilos para el botón cuando está deshabilitado */
 .customButton:disabled {
-    margin-left: 130px; /* Margen izquierdo grande para alineación */
+    margin-left: 110px; /* Margen izquierdo grande para alineación */
     border-radius: 0.5rem; /* Bordes redondeados */
     background-color: gray; /* Fondo gris */
     color: white; /* Texto blanco */
@@ -41,7 +41,7 @@ mat-grid-list {
 
 /* Estilos para el botón en estado normal */
 .customButton {
-    margin-left: 130px; /* Margen izquierdo grande para alineación */
+    margin-left: 110px; /* Margen izquierdo grande para alineación */
     border-radius: 0.5rem; /* Bordes redondeados */
     background-color: #1565c0; /* Fondo azul oscuro */
     color: white; /* Texto blanco */
