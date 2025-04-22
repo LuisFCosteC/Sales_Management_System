@@ -1,57 +1,66 @@
+/* Estilo para el contenedor principal del cuerpo */
 .body {
-    display: flex;
-    justify-content: center;
-    height: 100vh; 
-    align-items: center;
-    position: relative; /* Necesario para el posicionamiento del overlay */
-    overflow: hidden; /* Para evitar el desbordamiento */
+    display: flex;              /* Utiliza flexbox para alinear los elementos hijos */
+    justify-content: center;    /* Centra horizontalmente los elementos hijos */
+    height: 100vh;              /* Establece la altura del contenedor al 100% de la altura de la ventana */
+    align-items: center;        /* Centra verticalmente los elementos hijos */
+    position: relative;         /* Necesario para el posicionamiento del overlay */
+    overflow: hidden;           /* Evita el desbordamiento del contenido */
 }
 
+/* Estilo para el overlay de fondo */
 .body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/assets/imagenes/background.jpg'); /* Asegúrate de que la ruta sea correcta */
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    opacity: 0.8; /* Ajusta la opacidad para el efecto de desvanecido */
-    z-index: -1; /* Asegura que el overlay esté detrás del contenido */
+    content: '';                                                /* Crea un pseudo-elemento vacío */
+    position: absolute;                                         /* Posiciona el overlay de forma absoluta respecto al contenedor padre */
+    top: 0;                                                     /* Alinea el overlay en la parte superior */
+    left: 0;                                                    /* Alinea el overlay a la izquierda */
+    right: 0;                                                   /* Alinea el overlay a la derecha */
+    bottom: 0;                                                  /* Alinea el overlay en la parte inferior */
+    background-image: url('/assets/imagenes/background.jpg');   /* Establece la imagen de fondo (verifica la ruta) */
+    background-size: cover;                                     /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;                                /* Centra la imagen en el contenedor */
+    opacity: 0.8;                                               /* Ajusta la opacidad para crear un efecto de desvanecido */
+    z-index: -1;                                                /* Asegura que el overlay esté detrás del contenido */
 }
 
+/* Estilo para las etiquetas de Material Design */
 mat-label {
-    background-color: #f5f5f5;
-    color: #1565c0;
+    background-color: #f5f5f5;  /* Establece un color de fondo claro para las etiquetas */
+    color: #1565c0;             /* Establece el color del texto de las etiquetas */
 }
 
+/* Estilo para el encabezado y los iconos de Material Design */
 .header,
 .iconMat {
-    color: #1565c0;
+    color: #1565c0; /* Establece el color del texto para el encabezado y los iconos */
 }
 
+/* Estilo para el contenido de la tarjeta de inicio de sesión */
 .loginCardContent {
-    max-width: 328px !important;
-    margin: 2em auto;
-    text-align: center;
-    max-height: 600px;
+    max-width: 328px !important;    /* Establece un ancho máximo para la tarjeta */
+    margin: 2em auto;               /* Centra la tarjeta con un margen superior e inferior de 2em */
+    text-align: center;             /* Centra el texto dentro de la tarjeta */
+    max-height: 600px;              /* Establece una altura máxima para la tarjeta */
 }
 
+/* Estilo para la tarjeta de inicio de sesión */
 .loginCard {
-    border: 2px solid #1565c0;
-    position: relative; /* Para que el contenido de la tarjeta esté por encima del fondo */
-    z-index: 1; /* Asegura que la tarjeta esté por encima del fondo */
+    border: 2px solid #1565c0;  /* Establece un borde azul alrededor de la tarjeta */
+    position: relative;           /* Permite que el contenido de la tarjeta esté por encima del fondo */
+    z-index: 1;                   /* Asegura que la tarjeta esté por encima del overlay */
 }
 
+/* Estilo para el encabezado dentro de la tarjeta */
 .header {
-    text-align: center;
+    text-align: center; /* Centra el texto del encabezado */
 }
 
+/* Estilo para elementos que deben ocupar todo el ancho */
 .full-width {
-    width: 100%;
+    width: 100%; /* Establece el ancho al 100% del contenedor padre */
 }
 
+/* Estilo para la barra de progreso personalizada */
 .custom-progress-bar {
-    height: 20px;
+    height: 20px; /* Establece la altura de la barra de progreso */
 }
