@@ -1,67 +1,76 @@
 /* Estilo para el contenedor principal que incluye la barra de herramientas y el contenido */
 .main-container {
-    position: relative; /* Necesario para el posicionamiento del overlay */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    overflow: hidden; /* Para evitar el desbordamiento */
+    position: relative;  /* Necesario para el posicionamiento del overlay */
+    height: 100vh;       /* Ocupa toda la altura de la ventana */
+    overflow: hidden;    /* Evita el desbordamiento del contenido */
 }
 
+/* Estilo para el overlay de fondo en el contenedor principal */
 .main-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/assets/imagenes/background.jpg'); /* Asegúrate de que la ruta sea correcta */
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    opacity: 0.8; /* Ajusta la opacidad para que la imagen sea más visible */
-    z-index: -1; /* Asegura que el overlay esté detrás del contenido */
+    content: '';                                                /* Crea un pseudo-elemento vacío para el overlay */
+    position: absolute;                                         /* Posiciona el overlay de forma absoluta respecto al contenedor padre */
+    top: 0;                                                     /* Alinea el overlay en la parte superior */
+    left: 0;                                                    /* Alinea el overlay a la izquierda */
+    right: 0;                                                   /* Alinea el overlay a la derecha */
+    bottom: 0;                                                  /* Alinea el overlay en la parte inferior */
+    background-image: url('/assets/imagenes/background.jpg');   /* Establece la imagen de fondo (verifica la ruta) */
+    background-size: cover;                                     /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;                                /* Centra la imagen en el contenedor */
+    opacity: 0.8;                                               /* Ajusta la opacidad para que la imagen sea más visible */
+    z-index: -1;                                                /* Asegura que el overlay esté detrás del contenido */
 }
 
-/* Estilo para el contenido del sidenav */
+/* Estilo para el contenedor del menú lateral (sidenav) */
 mat-sidenav-container {
-    background: transparent; /* Quita el fondo por defecto */
+    background: transparent;    /* Quita el fondo por defecto del contenedor del sidenav */
 }
 
-/* Estilos existentes */
+/* Estilo para la barra de herramientas */
 .toolbar {
-    background-color: rgba(21, 101, 192, 0.9); /* Color de fondo con algo de transparencia */
-    color: white;
+    background-color: rgba(21, 101, 192, 0.9);  /* Color de fondo con algo de transparencia */
+    color: white;                               /* Color del texto en la barra de herramientas */
 }
 
+/* Estilo para los iconos en la barra de herramientas y el menú */
 .icon {
-    color: white;
+    color: white; /* Color de los iconos */
 }
 
+/* Estilo para el menú lateral (sidenav) */
 .sidenav {
-    width: 230px;
-    background-color: rgba(21, 101, 192, 0.9);
-    border-radius: 0rem;
+    width: 230px; /* Ancho del menú lateral */
+    background-color: rgba(21, 101, 192, 0.9);  /* Color de fondo con algo de transparencia */
+    border-radius: 0rem;                          /* Sin redondeo en las esquinas */
 }
 
+/* Estilo para los elementos de la lista en el menú lateral */
 .list-item {
-    height: 500px;
+    height: 500px; /* Altura de los elementos de la lista (puede ser ajustada según el contenido) */
 }
 
+/* Estilo para el contenedor de cada elemento de la lista */
 .div-list-item {
-    display: flex; 
-    align-items: center;
+    display: flex;          /* Utiliza flexbox para alinear los elementos dentro del contenedor */
+    align-items: center;    /* Centra verticalmente los elementos dentro del contenedor */
 }
 
+/* Estilo para los iconos de la lista */
 .iconList {
-    color: white !important; 
+    color: white !important; /* Color de los iconos en la lista, con !important para asegurar que se aplique */
 }
 
+/* Estilo para el texto de los elementos de la lista */
 .span-div-list-item {
-    margin-left: 20px;
-    color: white;
+    margin-left: 20px;  /* Margen a la izquierda para separar el texto del icono */
+    color: white;     /* Color del texto en los elementos de la lista */
 }
 
+/* Estilo para el espacio flexible en la barra de herramientas */
 .span {
-    flex: 1 1 auto;
+    flex: 1 1 auto; /* Permite que el espacio se ajuste automáticamente */
 }
 
+/* Estilo para la etiqueta que muestra el nombre y rol del usuario */
 .labelUser  {
-    margin-right: 30px;
+    margin-right: 30px; /* Margen a la derecha para separar la etiqueta de otros elementos */
 }
