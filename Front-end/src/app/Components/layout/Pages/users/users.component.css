@@ -1,39 +1,48 @@
+/* Estilo para el encabezado h1 */
 h1 {
-    color: white;
-    margin: 20px 0px 0px 40px;
+    color: white;                 /* Color del texto en blanco */
+    margin: 20px 0px 0px 40px;      /* Margen superior de 20px, sin margen horizontal, y margen izquierdo de 40px */
 }
 
-table{
-    width: 100%;
+/* Estilo para las tablas */
+table {
+    width: 100%; /* La tabla ocupará el 100% del ancho del contenedor */
 }
 
+/* Estilo para los componentes mat-card */
 mat-card {
-    background-color: #81d4fa;
-    margin: 20px 40px 40px 40px;
+    background-color: #81d4fa; /* Color de fondo azul claro */
+    margin: 20px 40px 40px 40px; /* Margen superior de 20px, y márgenes laterales e inferior de 40px */
 }
 
+/* Estilo para botones personalizados */
 .customButton {
-    border-radius: 0.7rem 2.5rem 0 0;
-    background-color: #1565c0;
-    color: white;
+    border-radius: 0.7rem 2.5rem 0 0;   /* Bordes redondeados: superior izquierdo y derecho con diferentes radios */
+    background-color: #1565c0;        /* Color de fondo azul oscuro */
+    color: white;                     /* Color del texto en blanco */
 }
 
+/* Estilo para campos de formulario */
 mat-form-field {
-    margin-top: 10px;
+    margin-top: 10px; /* Margen superior de 10px */
 }
 
-.formField{
-    background-color: #81d4fa;
+/* Estilo para campos de formulario personalizados */
+.formField {
+    background-color: #81d4fa; /* Color de fondo azul claro */
 }
 
+/* Estilo para contenedores de acciones */
 .Actions {
-    width: 120px;
+    width: 120px; /* Ancho fijo de 120px */
 }
 
+/* Estilo para iconos de edición personalizados */
 .customIconEdit {
-    color: #FF8F00;
+    color: #FF8F00; /* Color del icono de edición en naranja */
 }
 
+/* Estilo para iconos de eliminación personalizados */
 .customIconDelete {
-    color: red;
+    color: red; /* Color del icono de eliminación en rojo */
 }
