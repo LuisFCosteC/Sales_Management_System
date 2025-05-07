@@ -1,19 +1,29 @@
+<!-- Título principal del dashboard -->
 <h1>Ventas Semanales</h1>
 
+<!-- Tarjeta contenedora principal -->
 <mat-card>
     <mat-card-content>
+        <!-- Grid para mostrar las métricas en 3 columnas -->
         <mat-grid-list cols="3" rowHeight="100px">
+            
+            <!-- Primer tile: Ingresos totales -->
             <mat-grid-tile>
+                <!-- Tarjeta de información -->
                 <mat-card class="card-info">
                     <mat-card-header>
+                        <!-- Icono decorativo -->
                         <div mat-card-avatar>
                             <mat-icon class="iconPayments">payments</mat-icon>
                         </div>
+                        <!-- Título y subtítulo con dato dinámico -->
                         <mat-card-title>Ingresos Totales</mat-card-title>
                         <mat-card-subtitle>$ {{totalRevenues}}</mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
             </mat-grid-tile>
+            
+            <!-- Segundo tile: Total de ventas -->
             <mat-grid-tile>
                 <mat-card class="card-info">
                     <mat-card-header>
@@ -21,10 +31,13 @@
                             <mat-icon class="iconSell">sell</mat-icon>
                         </div>
                         <mat-card-title>Total de Ventas</mat-card-title>
+                        <!-- Valor dinámico de totalSales -->
                         <mat-card-subtitle>{{totalSales}}</mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
             </mat-grid-tile>
+            
+            <!-- Tercer tile: Total de productos -->
             <mat-grid-tile>
                 <mat-card class="card-info">
                     <mat-card-header>
@@ -32,14 +45,19 @@
                             <mat-icon class="iconCollectionsBookmark">collections_bookmark</mat-icon>
                         </div>
                         <mat-card-title>Total de Productos</mat-card-title>
+                        <!-- Valor dinámico de totalProducts -->
                         <mat-card-subtitle>{{totalProducts}}</mat-card-subtitle>
                     </mat-card-header>
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>
+        
+        <!-- Tarjeta contenedora del gráfico -->
         <mat-card class="cardGraphic">
             <mat-card-content>
+                <!-- Contenedor del canvas para Chart.js -->
                 <div class="divGraphic">
+                    <!-- Elemento canvas donde se renderizará el gráfico -->
                     <canvas id="chartBars"></canvas>
                 </div>
             </mat-card-content>
