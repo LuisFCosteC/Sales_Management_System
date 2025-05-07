@@ -83,5 +83,116 @@ The project consists of the following main files:
     - Lazy Loading for optimization.
    
 ### 4. General Architecture Diagram
-![image](https://github.com/user-attachments/assets/dd7a52b5-a224-4215-a214-c6be72c86159)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dd7a52b5-a224-4215-a214-c6be72c86159" width="600">
+</div>
+
+# Requirements and Facilities for the “Sales Management System” Project
+
+### 1. System Requirements
+
+  - **Back-End (API in ASP.NET Core):**
+    - **Database:** SQL Server (local or remote).
+    - **Development Environment:** Visual Studio 2022 or higher.
+    - **SDK:** .NET 6.0 or higher.
+    - **NuGet packages:**
+      - `Microsoft.EntityFrameworkCore.SqlServer`
+      - `Microsoft.EntityFrameworkCore.Tools`
+      - `AutoMapper`
+      - `AutoMapper.Extensions.Microsoft.DependencyInjection`
+    - **Server:** SQL Server Express (for local development).
+  - Front-End (Angular):
+    - **Node.js:** Version 16.x or higher.
+    - **Angular CLI:** Latest stable version.
+    - **Browser:** Chrome, Firefox, Edge (latest versions).
+    - **Dependencies:**
+      - `@angular/material` (UI components).
+      - `sweetalert2` (alerts).
+      - `moment` (date management).
+      - `chart.js` (charts).
+      - `xlsx` (Excel manipulation).
+
+### 2. Necessary Facilities
+
+  - **Back-End:**
+    - **Database:**
+      - Install **SQL Server Express** (or use an existing instance).
+      - Execute the SQL script to create the `DB_Sales` database and the mentioned tables.
+    - **Development Environment:**
+      - Install **Visual Studio 2022** with workloads:
+        - ASP.NET and web development.
+        - .NET desktop development.
+    - **NuGet packages (run in Visual Studio):**
+      
+      ````bash
+      Install-Package Microsoft.EntityFrameworkCore.SqlServer
+      Install-Package Microsoft.EntityFrameworkCore.Tools
+      Install-Package AutoMapper
+      Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+      ````
+    - **Configuration:**
+      - Update connection string in `appsettings.json`:
+  - **Front-End:**
+    - **Node.js and Angular CLI:**
+      
+      ````bash
+      npm install -g @angular/cli
+      ````
+      
+    - **Create Angular Project:**
+
+      ````bash
+      ng new FRONT-END
+      cd FRONT-END
+      ````
+    
+    - **Install Dependencies:**
+
+      ````bash
+      ng add @angular/material
+      npm install sweetalert2@11.6.16
+      npm install moment --save
+      npm install @angular/material-moment-adapter
+      npm install chart.js
+      npm install xlsx
+      ````
+
+    - **Configuration:**
+      - Update environment.ts with API URL:
+        
+        ````bash
+        export const environment = {
+          production: false,
+          endpoint: "http://localhost:5208/api/"
+        };
+        ````
+
+### 3. Additional Configuration
+
+  - **CORS**: Enable in `Program.cs` (Back-End):
+  
+    ````bash
+    builder.Services.AddCors(options => {
+      options.AddPolicy("NewPolicy", app => {
+          app.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+      });
+    });
+    app.UseCors("NewPolicy");
+    ````
+    
+  - **AutoMapper**: Configure profiles in `AutoMapperProfile.cs` (Back-End) and `shared.module.ts` (Front-End).
+
+### 4. Project Execution
+  
+  - Back-End:
+    - Execute the API from Visual Studio (F5).
+  - Front-End:
+
+    ````bash
+    ng serve -o
+    ````
+
+# Presentation of the site
+
 
